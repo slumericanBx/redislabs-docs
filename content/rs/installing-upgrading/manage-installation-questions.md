@@ -8,9 +8,7 @@ categories: ["RS"]
 aliases: /rs/installing-upgrading/manage-installation-questions/
 ---
 
-Several questions are displayed during the Redis Software installation process.
-
-Here, you'll find a list of these questions and learn how to automatically answer these questions to perform a silent install.
+When installing Redis Enterprise Software, you'll need to answer several questions.  Here, you'll find a list of these questions.  In addition, you'll learn how to automatically answer these questions to perform a silent install.
 
 ## Installation questions
 
