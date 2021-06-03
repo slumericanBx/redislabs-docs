@@ -85,6 +85,22 @@ The new certificates are used the next time the clients connect to the database.
 
 When you upgrade RS, the upgrade process copies the certificates that are on the first upgraded node to all of the nodes in the cluster.
 
+### Update syncer certificates for Active-Active databases
+To update your syncer certificate on cluster/s with Active-Active database/s follow the next steps:
+**Step 1:** Update your syncer certificate on one of the participating clusters using one of the above options (rladmin / API / UI).
+**Step 2:** From the same cluster, via the command-line with the [crdb-cli]({{< relref "rs/references/crdb-cli-reference.md" >}}) run:
+```text
+crdb-cli crdb update --crdb-guid <CRDB-GUID> --force
+```
+Important Notes:
+- Step 2 must be done for all Active-Active databases on that cluster.
+- It is required that you run step 2 shortly as possible after step 1, since between the two steps:
+  - Existing syncer connections will live
+  - New syncer connections that use the ‘old’ certificate will be rejected by the cluster that has been updated with the new certificate (in step 1).
+- Therefore it is required to perform the two steps in a short timeframe.
+- Do not run any other _crdb-cli crdb update_ between the two steps.
+
+
 ## TLS protocol and ciphers
 
 TLS protocols and ciphers define the overall suite of algorithms that clients are able to connect to the servers with. You can change the TLS protocols and ciphers to improve the security posture of your RS cluster and databases. The default settings are in line with industry best practices, but you can customize them to match the security policy of your organization.
