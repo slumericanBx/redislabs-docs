@@ -1,13 +1,13 @@
 ---
-Title: Connect the Prometheus operator to Redis Enterprise Software on Kubernetes
+Title: Expert metrics to Prometheus
 linkTitle: Export metrics to Prometheus
 description: This article describes how to configure a Prometheus operator custom resource to allow it to export metrics from Redis Enterprise Software on Kubernetes.
 weight: 92
 alwaysopen: false
 categories: ["Platforms"]
 aliases: [
-      /kubernetes/re-clusters/connect-prometheus-operator.md,
-      /kubernetes/re-clusters/connect-prometheus-operator/,
+      /kubernetes/re-clusters/export-metrics-to-prometheus.md,
+      /kubernetes/re-clusters/export-metrics-to-prometheus/,
 ]  
 ---
 
